@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useContext} from 'react';
+import Context from '../Context/Context';
 
-export function Todo({text,todo, todos, setTodos}) {
+
+export function Todo({text,todo, todos, setTodos }) {
+
+//const {todo, todos, setTodos}  =useContext(Context)
     //Event Effacer des todos
     const deletHandler=()=>{
         setTodos(todos.filter((e)=> e.id !== todo.id))

@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react';
+import Context from '../Context/Context';
 
-export function Todoform({inputText, setInputText, setTodos, todos, setStatus }) {
+
+
+export function Todoform() {
   
   
-  
+  const {inputText, setInputText, setTodos, todos, setStatus}= useContext(Context)
     const inputTextHandler=(e)=>{
         
             setInputText(e.target.value)

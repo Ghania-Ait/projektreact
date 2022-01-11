@@ -3,7 +3,9 @@ import React, {useState, useEffect} from "react";
 import Todoform from "./TodoForm";
 import  Header  from "./Header";
 import Todolist from "./TodoList";
-import  '../style.scss'
+import  '../style.scss';
+import Context from "../Context/Context"
+
 
 
 function App() {
@@ -71,17 +73,15 @@ const getLocalTodos= ()=>{
      
       <Header />
       <span> </span>
-      <Todoform 
-      inputText={inputText} 
-      todos={todos} 
-      setTodos={setTodos} 
-      setInputText={setInputText} 
-      setStatus={setStatus} />
 
-      <Todolist 
-      setTodos={setTodos} 
-      todos={todos } 
-      filteredTodos={filteredTodos}/>
+      <Context.Provider value={{inputText, setInputText, todos,setTodos,setStatus, filteredTodos}}>
+      <Todoform/>
+       <Todolist/>
+
+      </Context.Provider>
+      
+
+      
       
      
      
